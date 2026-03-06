@@ -1,1 +1,104 @@
-たきい
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKIY'S SPACE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            cursor: crosshair;
+            transition: background 0.5s ease;
+        }
+
+        /* 浮遊する名前 */
+        h1 {
+            font-size: 8rem;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 5px 5px 0px #ff00ff, -5px -5px 0px #00ffff;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* 謎の回転要素 */
+        .circle {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: spin 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 自己紹介テキスト */
+        .bio {
+            max-width: 500px;
+            text-align: center;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #fff;
+            margin-top: 50px;
+        }
+
+        .highlight {
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        /* 警告っぽいボタン */
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: 2px solid #ff00ff;
+            background: transparent;
+            color: #ff00ff;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #ff00ff;
+            color: #000;
+        }
+    </style>
+</head>
+<body onclick="changeBg()">
+
+    <div class="circle"></div>
+    
+    <h1>TAKIY</h1>
+
+    <div class="bio">
+        <p>「たきい」という概念を観測していただき、ありがとうございます。</p>
+        <p>私は現在、<span class="highlight">「日常の隙間に潜む違和感」</span>を収集しながら、デジタルとアナログの境界線上で反復横跳びをしています。</p>
+        <p>好きなものは <span class="highlight">解けない謎</span>、苦手なものは <span class="highlight">予定調和</span> です。</p>
+    </div>
+
+    <button class="btn" onclick="
